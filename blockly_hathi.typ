@@ -1760,6 +1760,7 @@
     icon: loop-icon,
     colors: hathi-colors.kontrolle-wiederhole,
     has-side-connector: false,
+    width: 160pt,
   )
 }
 
@@ -1774,6 +1775,7 @@
     icon: loop-icon,
     colors: hathi-colors.kontrolle-wiederhole,
     has-side-connector: true,
+    width: 150pt,
   )
 }
 
