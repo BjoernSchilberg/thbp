@@ -1,7 +1,7 @@
 [package]
-name = "Typst Hathi Blocky Package"
+name = "thbp"
 version = "0.0.1"
-entrypoint = "blocky_hathi.typ"
+entrypoint = "blockly_hathi.typ"
 authors = ["Bjoern Schilberg"]
 repository = "https://github.com/bjoernschilberg/thbp"
 
