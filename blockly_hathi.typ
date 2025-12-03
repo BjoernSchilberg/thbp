@@ -721,7 +721,7 @@
   condition: none,
   icon: none,
   colors: hathi-colors.kontrolle-falls,
-  width: 150pt,
+  width: 80pt,
   inner-height: auto,  // Can be set explicitly or calculated
   has-top-socket: true,
   has-bottom-tab: true,
