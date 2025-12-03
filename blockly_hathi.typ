@@ -528,10 +528,14 @@
 }
 
 // Render input field (rounded rect with value)
-#let render-input-field(value, x, y, width: auto, dropdown: false, color: hathi-colors.hathi.primary) = {
+#let render-input-field(value, x, y, width: auto, dropdown: false, color: hathi-colors.hathi.primary, empty-width: 60pt) = {
   context {
     let field-width = if width == auto { 
-      measure(text(size: 11pt, value)).width + 15pt 
+      if value == "" {
+        empty-width
+      } else {
+        measure(text(size: 11pt, value)).width + 15pt
+      }
     } else { 
       width 
     }
@@ -545,7 +549,7 @@
         width: field-width,
         height: field-height,
         radius: 4pt,
-        fill: white.transparentize(40%),
+        fill: if value == "" { white } else { white.transparentize(40%) },
       )[
         #place(horizon + left, dx: 5pt)[
           #text(fill: black, size: 11pt, value)
@@ -964,7 +968,7 @@
               width: input-w - 10pt,
               height: 16pt,
               radius: 4pt,
-              fill: white.transparentize(40%),
+              fill: if n == "" { white } else { white.transparentize(40%) },
             )[
               #place(horizon + center)[
                 #text(fill: black, size: 11pt, strong[#n])
@@ -1080,7 +1084,10 @@
 
 // Drehe block with dropdown field for direction
 #let drehe(richtung: "links") = {
-  let w = 175pt
+  // Calculate width based on whether richtung is empty
+  let base-width = 128pt + 15pt  // Text width + padding
+  let field-width = if richtung == "" { 60pt } else { 47pt }  // Match empty-width or typical "links"/"rechts" width
+  let w = base-width + field-width
   let h = block-height
   let colors = hathi-colors.hathi
   
@@ -1721,7 +1728,7 @@
                 width: input-w - 10pt,
                 height: 16pt,
                 radius: 4pt,
-                fill: white.transparentize(40%),
+                fill: if n == "" { white } else { white.transparentize(40%) },
               )[
                 #place(horizon + center)[
                   #text(fill: black, size: 11pt, strong[#n])
