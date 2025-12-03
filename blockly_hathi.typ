@@ -967,7 +967,7 @@
               fill: white.transparentize(40%),
             )[
               #place(horizon + center)[
-                #text(fill: black, size: 11pt, n)
+                #text(fill: black, size: 11pt, strong[#n])
               ]
             ]
           ]
@@ -1254,7 +1254,7 @@
               fill: white.transparentize(40%),
             )[
               #place(horizon + center)[
-                #text(fill: black, size: 11pt, wert)
+                #text(fill: black, size: 11pt, strong[#wert])
               ]
             ]
           ]
@@ -1724,7 +1724,7 @@
                 fill: white.transparentize(40%),
               )[
                 #place(horizon + center)[
-                  #text(fill: black, size: 11pt, n)
+                  #text(fill: black, size: 11pt, strong[#n])
                 ]
               ]
             ]
