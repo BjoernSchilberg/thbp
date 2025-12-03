@@ -1,6 +1,6 @@
 # THBP
 
-Package for rendering Abbozza! Hathi World code blocks
+Package for rendering Abbozza! Hathi World Blockly code blocks
 
 ## Usage
 
