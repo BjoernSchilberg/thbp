@@ -9,8 +9,15 @@
 #gehe-vor()
 #v(5pt)
 #drehe(richtung: "links")
+
 #v(5pt)
 #drehe(richtung: "rechts")
+
+== Blöcke zusammenfassen
+#stack(spacing: 0pt,
+gehe-vor(),
+drehe(richtung: "links")
+)
 
 #v(15pt)
 
