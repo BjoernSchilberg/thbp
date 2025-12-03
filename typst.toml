@@ -1,0 +1,9 @@
+[package]
+name = "Typst Hathi Blocky Package"
+version = "0.0.1"
+entrypoint = "blocky_hathi.typ"
+authors = ["Bjoern Schilberg"]
+repository = "https://github.com/bjoernschilberg/thbp"
+
+description = "Package for rendering Abbozza! Hathi World code blocks"
+license = "MIT"
