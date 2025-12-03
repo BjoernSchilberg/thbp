@@ -891,6 +891,7 @@
 #let gehe-vor() = hathi-block("Gehe vor", icon: hathi-icon)
 #let hisse-flagge() = hathi-block("Hisse Flagge", icon: hathi-icon)
 #let hebe-bananen-auf() = hathi-block("Hebe Bananen auf", icon: hathi-icon)
+#let hebe-tomaten-auf() = hathi-block("Hebe Tomaten auf", icon: hathi-icon)
 #let lege-bananen-ab() = hathi-block("Lege Bananen ab", icon: hathi-icon)
 
 // Gehe n-mal vor block with embedded number input

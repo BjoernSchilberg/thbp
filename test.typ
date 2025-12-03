@@ -257,7 +257,7 @@
 
   #hauptprogramm(nested: (
     wiederhole-n-mal(n: "2", nested: (
-      hebe-bananen-auf(),
+      hebe-tomaten-auf(),
       gehe-vor(),
       gehe-vor(),
       drehe(richtung: "rechts"),
