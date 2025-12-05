@@ -92,122 +92,14 @@
 )
 
 // ============================================================================
-// EMBEDDED ICONS (SVG paths from original)
+// EMBEDDED ICONS (loaded from external SVG files)
 // ============================================================================
 
-// Gear icon for Hauptprogramm (from SVG)
-#let gear-icon-path = "m4.203,7.296 0,1.368 -0.92,0.677 -0.11,0.41 0.9,1.559 0.41,0.11 1.043,-0.457 1.187,0.683 0.127,1.134 0.3,0.3 1.8,0 0.3,-0.299 0.127,-1.138 1.185,-0.682 1.046,0.458 0.409,-0.11 0.9,-1.559 -0.11,-0.41 -0.92,-0.677 0,-1.366 0.92,-0.677 0.11,-0.41 -0.9,-1.559 -0.409,-0.109 -1.046,0.458 -1.185,-0.682 -0.127,-1.138 -0.3,-0.299 -1.8,0 -0.3,0.3 -0.126,1.135 -1.187,0.682 -1.043,-0.457 -0.41,0.11 -0.899,1.559 0.108,0.409z"
-
-// Gear icon as inline SVG
-#let gear-icon = ```<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-  <rect rx="4" ry="4" width="16" height="16" fill="#0000ff" stroke="white" stroke-width="1"/>
-  <path fill="white" d="m4.203,7.296 0,1.368 -0.92,0.677 -0.11,0.41 0.9,1.559 0.41,0.11 1.043,-0.457 1.187,0.683 0.127,1.134 0.3,0.3 1.8,0 0.3,-0.299 0.127,-1.138 1.185,-0.682 1.046,0.458 0.409,-0.11 0.9,-1.559 -0.11,-0.41 -0.92,-0.677 0,-1.366 0.92,-0.677 0.11,-0.41 -0.9,-1.559 -0.409,-0.109 -1.046,0.458 -1.185,-0.682 -0.127,-1.138 -0.3,-0.299 -1.8,0 -0.3,0.3 -0.126,1.135 -1.187,0.682 -1.043,-0.457 -0.41,0.11 -0.899,1.559 0.108,0.409z"/>
-  <circle cx="8" cy="8" r="2.7" fill="#0000ff" stroke="white" stroke-width="1"/>
-</svg>```.text
-
-// Hathi elephant icon (from hathi.svg)
-#let hathi-icon = ```<svg width="16" height="16" viewBox="-64 -96 128 128" xmlns="http://www.w3.org/2000/svg">
-<g id="hathi" transform="scale(1,1)">
-  <!-- right ear -->
-  <g transform="skewY(0)">
-    <path d="M 45 -64 s 24 -32 0 48 z"
-      stroke="#6495ed" fill="#6495ed"
-      stroke-width="1"
-      stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
-  <!-- background -->
-  <g>
-    <path d="M 0 22 l 48 -24 l 0 -64 l -48 -24 l -48 24 l 0 64 z" 
-      stroke-width="5" stroke-linejoin="round"
-      stroke="#84b5fd" fill="#84b5fd"
-    />
-    <path d="M 20 13 l 10 -5 l 0 -30 l -10 5 z"
-      stroke-width="1" stroke-linejoin="round"
-      stroke="#3465bd" fill="#3465bd"
-    />
-    <path d="M -20 13 l -10 -5 l 0 -30 l 10 5 z"
-      stroke-width="1" stroke-linejoin="round"
-      stroke="#3465bd" fill="#3465bd"
-    />
-  </g>
-  <!-- face -->
-  <g transform="skewY(-26.5)">
-    <rect x="1" y="-42" width="48" height="48" rx="2" ry="2" fill="#6495ed"/>
-    <rect x="1" y="0" width="22" height="24" rx="2" ry="2" fill="#6495ed"/>
-    <rect x="27" y="0" width="22" height="24" rx="2" ry="2" fill="#6495ed"/>          
-    <!-- eyes -->
-    <g>
-      <ellipse cx="12.5" cy="-30" rx="5" ry="5" fill="white" stroke="white"/>
-      <ellipse cx="12.5" cy="-28" rx="2" ry="2" fill="black" stroke="black"/>
-    </g>
-    <g>
-      <ellipse cx="40.5" cy="-30" rx="5" ry="5" fill="white" stroke="white"/>
-      <ellipse cx="40.5" cy="-28" rx="2" ry="2" fill="black" stroke="black"/>
-    </g>
-  </g>
-  <!-- side -->
-  <g transform="skewY(26.5)">
-    <rect x="-49" y="-42" width="48" height="48" rx="2" ry="2" fill="#5485dd"/>
-    <rect x="-49" y="0" width="22" height="24" rx="2" ry="2" fill="#5485dd"/>
-    <rect x="-23" y="0" width="22" height="24" rx="2" ry="2" fill="#5485dd"/>          
-  </g>
-    <!-- left ear -->
-    <g>
-      <path d="M -5 -42 s -54 -6 0 48 z"
-        stroke="#3465bd" fill="#3465bd"
-        stroke-width="1"
-        stroke-linecap="round" stroke-linejoin="round"/>  
-      <path d="M -5 -42 s -48 0 0 48 z"
-        stroke="#6495ed" fill="#6495ed"
-        stroke-width="1"
-        stroke-linecap="round" stroke-linejoin="round"/> 
-    </g>
-  <!-- top -->
-  <g>
-    <path d="M 0 -45 l 46 -23 l -46 -23 l -46 23 z" 
-      stroke-width="1" stroke-linejoin="round"
-      stroke="#74a5fd" fill="#74a5fd"
-    />
-    <path d="M 18 -61 l 0 -10"
-      stroke-width="3" stroke-linejoin="round" stroke-linecap="round"
-      stroke="black" fill="black"/>
-    <path d="M 22 -63 a 20 20 0 0 1 2 -10"
-      stroke-width="3" stroke-linejoin="round" stroke-linecap="round"
-      stroke="black" fill="black"/>
-    <path d="M 14 -59 a 20 20 0 0 0 -2 -10"
-      stroke-width="3" stroke-linejoin="round" stroke-linecap="round"
-      stroke="black" fill="black"/>
-  </g>
-  <!-- trunk -->
-  <g>
-    <path d="M 26.5 -38 a 40 30 0 0 1 0 24 a 30 30 0 0 0 0 12"
-      stroke="#4475cd" fill="none"
-      stroke-width="10"
-      stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M 30.5 -38 a 40 30 0 0 1 0 24 a 30 30 0 0 0 0 12"
-      stroke="#84b5fd" fill="none"
-      stroke-width="10"
-      stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M 28.5 -38 a 40 30 0 0 1 0 24 a 30 30 0 0 0 0 12"
-      stroke="#6495ed" fill="none"
-      stroke-width="10"
-      stroke-linecap="round" stroke-linejoin="round">
-    </path>
-  </g>
-</g>
-</svg>```.text
-
-// If/Falls icon (branching symbol - single unified path)
-#let if-icon = ```<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-  <path fill="white" d="M28,4 L36,4 L36,24 L52,24 L52,44 L44,44 L44,32 L20,32 L20,44 L12,44 L12,24 L28,24 Z M8,44 L24,44 L16,60 Z M40,44 L56,44 L48,60 Z"/>
-</svg>```.text
-
-
-
-// Loop icon
-#let loop-icon =```
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="white" stroke="white" stroke-width="1" d="M500.7 138.7L512 149.4L512 96C512 78.3 526.3 64 544 64C561.7 64 576 78.3 576 96L576 224C576 241.7 561.7 256 544 256L416 256C398.3 256 384 241.7 384 224C384 206.3 398.3 192 416 192L463.9 192L456.3 184.8C456.1 184.6 455.9 184.4 455.7 184.2C380.7 109.2 259.2 109.2 184.2 184.2C109.2 259.2 109.2 380.7 184.2 455.7C259.2 530.7 380.7 530.7 455.7 455.7C463.9 447.5 471.2 438.8 477.6 429.6C487.7 415.1 507.7 411.6 522.2 421.7C536.7 431.8 540.2 451.8 530.1 466.3C521.6 478.5 511.9 490.1 501 501C401 601 238.9 601 139 501C39.1 401 39 239 139 139C238.9 39.1 400.7 39 500.7 138.7z"/></svg>
-```.text
+// Load icons from external SVG files
+#let gear-icon = read("svg/gear-icon.svg")
+#let hathi-icon = read("svg/hathi-icon.svg")
+#let if-icon = read("svg/if-icon.svg")
+#let loop-icon = read("svg/loop-icon.svg")
 
 // ============================================================================
 // PATH GENERATION FUNCTIONS
