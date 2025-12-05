@@ -783,16 +783,16 @@
 // CONVENIENCE WRAPPERS
 // ============================================================================
 
-// Hathi blocks
-#let gehe-vor() = hathi-block("Gehe vor", icon: hathi-icon)
-#let hisse-flagge() = hathi-block("Hisse Flagge", icon: hathi-icon)
-#let hebe-bananen-auf() = hathi-block("Hebe Bananen auf", icon: hathi-icon)
-#let hebe-tomaten-auf() = hathi-block("Hebe Tomaten auf", icon: hathi-icon)
-#let lege-bananen-ab() = hathi-block("Lege Bananen ab", icon: hathi-icon)
+// Hathi blocks (with optional custom icon parameter)
+#let gehe-vor(icon: hathi-icon) = hathi-block("Gehe vor", icon: icon)
+#let hisse-flagge(icon: hathi-icon) = hathi-block("Hisse Flagge", icon: icon)
+#let hebe-bananen-auf(icon: hathi-icon) = hathi-block("Hebe Bananen auf", icon: icon)
+#let hebe-tomaten-auf(icon: hathi-icon) = hathi-block("Hebe Tomaten auf", icon: icon)
+#let lege-bananen-ab(icon: hathi-icon) = hathi-block("Lege Bananen ab", icon: icon)
 
 // Gehe n-mal vor block with embedded number input
 // Based on SVG: "Gehe [n] mal vor" with purple number block
-#let gehe-n-mal(n: "4") = {
+#let gehe-n-mal(n: "4", icon: hathi-icon) = {
   let w = 165pt
   let h = 36pt  // Taller block to accommodate embedded input (from SVG: v 36)
   let colors = hathi-colors.hathi
@@ -804,6 +804,8 @@
   let input-h = 25pt   // Height of input block (from SVG: v 25)
   let input-y = 6pt    // Y offset of input block
   
+  let the-icon = icon  // Capture icon for use in content-func
+  
   let path = create-simple-block-path(w, h, has-top-socket: true, has-bottom-tab: true)
   
   render-block-3d(
@@ -813,7 +815,7 @@
     h,
     content-func: {
       // Icon at y=10 (from SVG: transform="translate(10,10)")
-      render-icon(hathi-icon, y: 10pt)
+      render-icon(the-icon, y: 10pt)
       // "Gehe" text (from SVG: transform="translate(36,10)")
       place(
         top + left,
@@ -883,7 +885,7 @@
 // Gehe <Variable> mal vor block with embedded variable dropdown
 // Based on SVG: "Gehe [Variable] mal vor" with orange variable block
 // SVG path: M 175.890625,5 h -88.03125 v 5 c -8,0 -8,15 0,15 v 7 h 88.03125 z
-#let gehe-variable-mal(variable: "Baeume") = {
+#let gehe-variable-mal(variable: "Baeume", icon: hathi-icon) = {
   let w = 220pt
   let h = 36pt  // Taller block to accommodate embedded input
   let colors = hathi-colors.hathi
@@ -895,6 +897,8 @@
   let input-h = 25pt   // Height of variable block
   let input-y = 6pt    // Y offset of variable block
   
+  let the-icon = icon  // Capture icon for use in content-func
+  
   let path = create-simple-block-path(w, h, has-top-socket: true, has-bottom-tab: true)
   
   render-block-3d(
@@ -904,7 +908,7 @@
     h,
     content-func: {
       // Icon at y=10 (from SVG: transform="translate(10,10)")
-      render-icon(hathi-icon, y: 10pt)
+      render-icon(the-icon, y: 10pt)
       // "Gehe" text (from SVG: transform="translate(36,10)")
       place(
         top + left,
@@ -975,13 +979,15 @@
 }
 
 // Drehe block with dropdown field for direction
-#let drehe(richtung: "links") = {
+#let drehe(richtung: "links", icon: hathi-icon) = {
   // Calculate width based on whether richtung is empty
   let base-width = 128pt + 15pt  // Text width + padding
   let field-width = if richtung == "" { 60pt } else { 47pt }  // Match empty-width or typical "links"/"rechts" width
   let w = base-width + field-width
   let h = block-height
   let colors = hathi-colors.hathi
+  
+  let the-icon = icon  // Capture icon for use in content-func
   
   let path = create-simple-block-path(w, h, has-top-socket: true, has-bottom-tab: true)
   
@@ -991,7 +997,7 @@
     w,
     h,
     content-func: {
-      render-icon(hathi-icon)
+      render-icon(the-icon)
       render-text("Drehe dich nach")
       // Dropdown field for direction - positioned after "Drehe dich nach" text
       // From SVG: transform="translate(152.734375,5)" - approximately 153pt from left
@@ -1001,11 +1007,11 @@
 }
 
 // Legacy wrappers (for backwards compatibility)
-#let drehe-links() = drehe(richtung: "links")
-#let drehe-rechts() = drehe(richtung: "rechts")
-#let nimm-auf() = hathi-block("Nimm auf", icon: hathi-icon)
-#let lege-ab() = hathi-block("Lege ab", icon: hathi-icon)
-#let sage(text: "Hallo") = hathi-block("Sage \"" + text + "\"", icon: hathi-icon, width: 140pt)
+#let drehe-links(icon: hathi-icon) = drehe(richtung: "links", icon: icon)
+#let drehe-rechts(icon: hathi-icon) = drehe(richtung: "rechts", icon: icon)
+#let nimm-auf(icon: hathi-icon) = hathi-block("Nimm auf", icon: icon)
+#let lege-ab(icon: hathi-icon) = hathi-block("Lege ab", icon: icon)
+#let sage(text: "Hallo", icon: hathi-icon) = hathi-block("Sage \"" + text + "\"", icon: icon, width: 140pt)
 
 // Setze <Name> auf <Wert> block (Variables block)
 // Based on SVG: Orange block with double S-curve connector, dropdown for name, and purple number input

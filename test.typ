@@ -2,6 +2,9 @@
 
 #set text(font: "Liberation Sans", size: 11pt)
 
+// Custom icon for alternative character
+#let hartmut = read("svg/hartmut.svg")
+
 = Typst Hathi Blockly Package
 
 == Einfache Hathi-Blöcke
@@ -13,11 +16,16 @@
 #v(5pt)
 #drehe(richtung: "rechts")
 
+== Blöcke mit benutzerdefiniertem Icon
+
+#gehe-vor(icon: hartmut)
+#v(5pt)
+#drehe(richtung: "links", icon: hartmut)
+#v(5pt)
+#gehe-n-mal(n: "3", icon: hartmut)
+
 == Blöcke zusammenfassen
-#stack(spacing: 0pt,
-gehe-vor(),
-drehe(richtung: "links")
-)
+#stack(spacing: 0pt, gehe-vor(), drehe(richtung: "links"))
 
 #v(15pt)
 
